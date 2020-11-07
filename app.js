@@ -38,7 +38,7 @@ app.post('/', function(req,res){
   const run = async () => {
 
     try {
-      const response = await mailchimp.lists.batchListMembers("39e9f4935", data);
+      const response = await mailchimp.lists.batchListMembers("39e9f49355", data);
       res.sendFile(__dirname+"/success.html");
     }
     catch {
@@ -51,7 +51,7 @@ app.post('/', function(req,res){
 app.post("/failure",function (req,res) {
   res.redirect('/');
 });
-app.listen(process.env.PORT, function(req,res){
+app.listen(process.env.PORT || 3000, function(req,res){
   console.log("Server listening on port 3000");
 });
 //api key-234d30e4325e7c00c649bdfa0643ceab-us2
